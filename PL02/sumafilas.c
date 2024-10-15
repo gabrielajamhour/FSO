@@ -6,7 +6,7 @@ struct FILA {
     float datos[TAM_FILA];
     float suma;
 };
-// A) Define una variable filas que sea un vector de estructuras FILA de tamaño NUM_FILAS
+// A) Define una variable filas que sea un vector de estructuras FILA de tamaÃ±o NUM_FILAS
 
 void suma_fila(struct FILA *pf) {
 // B) Implementar suma_fila
