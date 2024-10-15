@@ -7,7 +7,7 @@ main() {
 
     // A) Definir las variables cadena y cadena2 
     // B) Leer cadena de consola 
-    // C) Convertir a mayúsculas
+    // C) Convertir a mayÃºsculas
     p1 = cadena;
     p2 = cadena2;
     while (*p1 != '\0') {
