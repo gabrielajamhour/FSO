@@ -6,8 +6,6 @@ struct FILA {
     float datos[TAM_FILA];
     float suma;
 };
-// A) Define una variable filas que sea un vector de estructuras FILA de tamaño NUM_FILAS
-struct FILA filas[NUM_FILAS];
 
 void suma_fila(struct FILA *pf) {
 // B) Implementar suma_fila
@@ -18,27 +16,22 @@ void suma_fila(struct FILA *pf) {
 }
 
 // Inicia las filas con el valor i*j
-void inicia_filas() {
-    int i, j;
-    for (i = 0; i < NUM_FILAS; i++) {
-        for (j = 0; j < TAM_FILA; j++) {
-            filas[i].datos[j] = (float)i*j;
-        }
+void inicia_fila(struct FILA *pf, int i) {
+    for (int j = 0; j < TAM_FILA; j++) {
+        pf->datos[i] = (float)i * j;
     }
 }
 main() { 
     int i;
     float suma_total;
     
-    inicia_filas();
-    // C) Completar bucle
     suma_total = 0;
+
     for (i = 0; i < NUM_FILAS; i++) {
-        // Llamar a suma_fila
-        suma_fila(&filas[i]); // Pasa la direccion de la fila actual
-        printf("La suma de la fila %u es %f\n", i, filas[i].suma);
-        // sumar la fila a suma_total
-        suma_total += filas[i].suma;
+        inicia_fila(&filas[i], i); // Llamar a inicia_fila para inicializar la fila
+        suma_fila(&filas[i]); // Llamar a suma_fila
+        printf("La suma de la fila %u es %f\n", i, filas[i].suma); // Imprimir la suma de fila
+        suma_total += filas[i].suma; // Sumar la fila a suma_total
     }
     printf("La suma final es %f\n", suma_total); 
 
